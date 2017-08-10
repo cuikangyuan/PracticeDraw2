@@ -37,13 +37,17 @@ public class Sample09StrokeCapView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //平头
         paint.setStrokeCap(Paint.Cap.BUTT);
         canvas.drawLine(50, 50, 400, 50, paint);
 
+        //圆头
         paint.setStrokeCap(Paint.Cap.ROUND);
         canvas.drawLine(50, 150, 400, 150, paint);
 
+        //方头
         paint.setStrokeCap(Paint.Cap.SQUARE);
         canvas.drawLine(50, 250, 400, 250, paint);
+
     }
 }

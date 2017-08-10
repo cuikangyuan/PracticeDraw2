@@ -37,7 +37,7 @@ public class Sample11StrokeMiterView extends View {
         super.onDraw(canvas);
 
         canvas.save();
-
+        //值越大 表示可以接受的夹角的最小值越小
         canvas.translate(100, 100);
         paint.setStrokeMiter(1);
         canvas.drawPath(path, paint);

@@ -41,7 +41,7 @@ public class Sample14MaskFilterView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        //绘制层上方的效果
         paint.setMaskFilter(maskFilter1);
         canvas.drawBitmap(bitmap, 100, 50, paint);
 

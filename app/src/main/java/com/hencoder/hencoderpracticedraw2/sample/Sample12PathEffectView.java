@@ -22,8 +22,12 @@ public class Sample12PathEffectView extends View {
     PathEffect discretePathEffect = new DiscretePathEffect(20, 5);
     PathEffect dashPathEffect = new DashPathEffect(new float[]{20, 10, 5, 10}, 0);
     PathEffect pathDashPathEffect;
-    PathEffect sumPathEffect = new SumPathEffect(dashPathEffect, discretePathEffect);
-    PathEffect composePathEffect = new ComposePathEffect(dashPathEffect, discretePathEffect);
+    //依次画出两个path
+    PathEffect sumPathEffect = new SumPathEffect(discretePathEffect, dashPathEffect);
+    //先画出一个path 在将第二个path的效果作用于当前的path
+
+    //TODO 以下是 先虚线 再偏离 注意!!
+    PathEffect composePathEffect = new ComposePathEffect(discretePathEffect, dashPathEffect);
 
     public Sample12PathEffectView(Context context) {
         super(context);
@@ -51,7 +55,8 @@ public class Sample12PathEffectView extends View {
         dashPath.lineTo(20, -30);
         dashPath.lineTo(40, 0);
         dashPath.close();
-        pathDashPathEffect = new PathDashPathEffect(dashPath, 50, 0, PathDashPathEffect.Style.MORPH);
+        pathDashPathEffect = new PathDashPathEffect(dashPath, 50, 0, PathDashPathEffect.Style.MORPH);//变体
+        //一共三种模式 变体 旋转 位移
     }
 
     @Override
